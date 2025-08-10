@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Loading</title>
+  <style>
+    body { margin: 0; background: #111; color: #eee; font: 20px sans-serif; }
+    #status { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    #files { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); }
+  </style>
+  <script>
+    window.SetStatusChanged = function(status) {
+      document.getElementById('status').textContent = status;
+    };
+    window.SetFilesNeeded = function(needed) {
+      document.getElementById('files').textContent = needed + ' files remaining';
+    };
+  </script>
+</head>
 <body>
-<h1>Loading Screen</h1>
-<p>I'm still hosted with GitHub Pages :D</p>
+  <div id="status">Loading…</div>
+  <div id="files"></div>
 </body>
 </html>
